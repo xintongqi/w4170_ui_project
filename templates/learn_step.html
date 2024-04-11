@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn_step.js') }}"></script>
+
+<script>
+    let s = {{ step| tojson }};
+    let ss = {{ steps| tojson }};
+</script>
+
+<div id="step"></div>
+
+{% endblock %}

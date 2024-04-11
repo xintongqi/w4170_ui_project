@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'search_results.js') }}"></script>
+
+<script>
+    let sr = {{ search_results| tojson }};
+    let st = "{{ search_text }}";
+    let nr = {{ no_results| tojson}};
+</script>
+
+<div id="search-results-container"></div>
+
+{% endblock %}

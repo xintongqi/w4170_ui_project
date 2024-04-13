@@ -31,8 +31,99 @@ learn_data = {
 
 # data related to the quiz module
 quiz_data = {
+    '1': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '2',
+        'prev': None
+    },
+    '2': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '3',
+        'prev': '1'
+    },
+    '3': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '4',
+        'prev': '2'
+    },
+    '4': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '5',
+        'prev': '3'
+    },
+    '5': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '6',
+        'prev': '4'
+    },
+    '6': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '7',
+        'prev': '5'
+    },
+    '7': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '8',
+        'prev': '6'
+    },
+    '8': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '9',
+        'prev': '7'
+    },
+    '9': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '10',
+        'prev': '8'
+    },
+    '10': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '11',
+        'prev': '9'
+    },
+    '11': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '12',
+        'prev': '10'
+    },
+    '12': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': '13',
+        'prev': '11'
+    },
+    '13': {
+        'name': 'mountain fold',
+        'diagram': '',
+        'video': '',
+        'next': None,
+        'prev': '12'
+    }
 }
-
+quiz_score = 0
 # data related to user choices
 user_data = {
 }
@@ -54,9 +145,14 @@ def take_quiz(prob_id):
     prob = quiz_data.get(prob_id)
     if prob:
         # todo: render the quiz template with proper url
-        return render_template('', step=prob, probs = quiz_data)
+        return render_template('quiz.html', step=prob_id, prob = prob)
     else:
         return "Oops! We don't have a quiz problem with this index!!"
+
+@app.route('/quiz/result')
+def quiz_result():
+    # todo: render the quiz template with proper url
+    return render_template('quiz_result.html', quiz_score = quiz_score)
 
 @app.route('/search', methods=['POST'])
 def search():

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_result.js') }}"></script>
+
+<script>
+    let score = {{ quiz_score| tojson }};
+
+</script>
+
+<div id="quiz_result">
+    <div id="quiz_score">Score: {{quiz_score}}/13</div>
+    <div>
+        <button id="quiz_resultHome" class = "btn btn-secondary">Home</button>
+    </div>
+    <div id="quiz_result_buttons">
+        <button id="quiz_resultLearn" class = "btn btn-secondary">Learn basics</button>
+        <button id="quiz_resultQuiz" class = "btn btn-secondary">Quiz Time</button>
+    </div>
+</div>
+
+
+{% endblock %}

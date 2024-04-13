@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+<script>
+    let id = {{ step| tojson }};
+    let content = {{ prob| tojson }};
+
+</script>
+
+<div id="step">
+    <button id="quiz_submitButton" onclick="showNextButton(); submitForm()">Submit</button>
+</div>
+<div id="quiz_back_next_but">
+    <button id="quiz_backButton" class = "btn btn-secondary">Back</button>
+    <button id="quiz_nextButton" class = "btn btn-success">Next</button>
+    
+</div>
+
+{% endblock %}

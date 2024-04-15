@@ -6,6 +6,9 @@ function display_step(step) {
   stepHtml += '<div class="col-md-6">';
   stepHtml += "<p>" + step.video + "</p>";
   stepHtml += "</div>";
+  stepHtml +=
+    "<button id='prevButton' class='btn btn-primary'>Previous</button>";
+  stepHtml += "<button id='nextButton' class='btn btn-primary'>Next</button>";
   $("#step").html(stepHtml);
 
   if (step.prev === null) {

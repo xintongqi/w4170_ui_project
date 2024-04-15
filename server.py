@@ -32,100 +32,127 @@ learn_data = {
 # data related to the quiz module
 quiz_data = {
     '1': {
-        'name': 'mountain fold',
+        'question': 'What fold is this?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '2',
         'prev': None
     },
     '2': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '3',
         'prev': '1'
     },
     '3': {
-        'name': 'mountain fold',
+        'question': 'What fold is this?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '4',
         'prev': '2'
     },
     '4': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '5',
         'prev': '3'
     },
     '5': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '6',
         'prev': '4'
     },
     '6': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '7',
         'prev': '5'
     },
     '7': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '8',
         'prev': '6'
     },
     '8': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '9',
         'prev': '7'
     },
     '9': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '10',
         'prev': '8'
     },
     '10': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '11',
         'prev': '9'
     },
     '11': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '12',
         'prev': '10'
     },
     '12': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': '13',
         'prev': '11'
     },
     '13': {
-        'name': 'mountain fold',
+        'question': 'What should it look like after the fold?',
         'diagram': '',
         'video': '',
+        'answer': 'A',
         'next': None,
         'prev': '12'
     }
 }
-quiz_score = 0
+current_quiz_score = 0
+num_quiz_question_done = 0
 # data related to user choices
 user_data = {
+    '1':'',
+    '2':'',
+    '3':'',
+    '4':'',
+    '5':'',
+    '6':'',
+    '7':'',
+    '8':'',
+    '9':'',
+    '10':'',
+    '11':'',
+    '12':'',
+    '13':'',
 }
 
 @app.route('/')
@@ -142,6 +169,12 @@ def view_step(step_id):
     
 @app.route('/quiz/<prob_id>')
 def take_quiz(prob_id):
+    global current_quiz_score
+    global user_data
+    if prob_id == '1':
+        current_quiz_score = 0
+        for key in user_data:
+            user_data[key] = ''
     prob = quiz_data.get(prob_id)
     if prob:
         # todo: render the quiz template with proper url
@@ -152,7 +185,7 @@ def take_quiz(prob_id):
 @app.route('/quiz/result')
 def quiz_result():
     # todo: render the quiz template with proper url
-    return render_template('quiz_result.html', quiz_score = quiz_score)
+    return render_template('quiz_result.html', quiz_score = current_quiz_score)
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -163,6 +196,20 @@ def search():
 
     return render_template('search_results.html', search_text=search_text, search_results=[], no_results=True)
 
+@app.route('/quiz/incre_score', methods=['POST'])
+def incre_score():
+    global current_quiz_score
+    current_quiz_score += 1
+    return jsonify(current_quiz_score = current_quiz_score)
+
+@app.route('/quiz/add_choice', methods=['POST'])
+def add_choice():
+    global user_data
+    json_data = request.get_json()
+    id = json_data["id"]
+    choice = json_data["choice"]
+    user_data[id] = choice
+    return jsonify(user_data = user_data)
 # # todo: record user choices; may need to change name of the route
 # @app.route('/add', methods=['GET', 'POST'])
 # def add_user_data():

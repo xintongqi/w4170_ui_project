@@ -22,3 +22,42 @@
 #quiz_result_buttons{
     margin-top: 10px;
 }
+#quiz_section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+}
+#basic_folds_bar{
+    text-align: center;
+    border-right: solid 0.5px lightgray;
+}
+#boat_bar{
+    text-align: center;
+    border-left: solid 0.5px lightgray;
+}
+#quiz_num{
+    text-align: right;
+}
+#quiz_img{
+    text-align: center;
+}
+#quiz_question{
+    text-align: center;
+}
+#quiz_A{
+    text-align:center
+}
+#quiz_B{
+    text-align:center
+}
+#quiz_right_wrong{
+    text-align: center;
+}
+.bold{
+    font-weight: bold;
+}
+.lighter{
+    font-weight: lighter;
+}

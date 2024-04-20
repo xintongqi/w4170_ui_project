@@ -1,14 +1,32 @@
 function display_step(step) {
-  var stepHtml = '<div class="col-md-6">';
+  var stepHtml = '<div class="row">';
+  stepHtml += '<div class="col-md-4">';
   stepHtml += "<h2>" + step.name + "</h2>";
-  stepHtml += "<p>" + step.diagram + "</p>";
+  stepHtml +=
+    '<img src="' +
+    step.diagram +
+    '" alt="' +
+    step.name +
+    '" class="img-fluid"/>';
   stepHtml += "</div>";
-  stepHtml += '<div class="col-md-6">';
-  stepHtml += "<p>" + step.video + "</p>";
+
+  stepHtml += '<div class="col-md-8">';
+  if (step.video) {
+    stepHtml +=
+      '<iframe src="' +
+      step.video +
+      '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; // Embed the video properly
+  } else {
+    stepHtml += "<p>No video available for this step.</p>";
+  }
   stepHtml += "</div>";
+
+  stepHtml += "</div>";
+
   stepHtml +=
     "<button id='prevButton' class='btn btn-primary'>Previous</button>";
   stepHtml += "<button id='nextButton' class='btn btn-primary'>Next</button>";
+
   $("#step").html(stepHtml);
 
   if (step.prev === null) {
@@ -24,31 +42,18 @@ function display_step(step) {
   }
 }
 
-function fetchStep(stepId) {
-  $.ajax({
-    url: "/learn_step/" + stepId,
-    type: "GET",
-    success: function (response) {
-      display_step(response.step);
-    },
-    error: function (xhr, status, error) {
-      console.error("Error fetching step:", error);
-    },
-  });
-}
-
 $(document).ready(function () {
   display_step(s);
 
   $("#prevButton").click(function () {
     if (s !== null) {
-      fetchStep(s.prev);
+      location.href = s.prev;
     }
   });
 
   $("#nextButton").click(function () {
     if (s !== null) {
-      fetchStep(s.next);
+      location.href = s.next;
     }
   });
 });

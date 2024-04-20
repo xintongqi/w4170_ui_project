@@ -8,25 +8,33 @@ app = Flask(__name__)
 learn_data = {
     '1': {
         'name': 'mountain fold',
-        'diagram': '',
-        'video': '',
+        'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Orisymbol_mountain_fold.svg/1000px-Orisymbol_mountain_fold.svg.png',
+        'video': 'https://www.youtube.com/embed/2jmhd7BPHx0?si=mkOOLQx60T1608_j&autoplay=1&loop=1',
         'next': '2',
         'prev': None
     },
     '2': {
         'name': 'valley fold',
-        'diagram': '',
-        'video': '',
+        'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Origami_symbol_valley_fold.svg/1000px-Origami_symbol_valley_fold.svg.png',
+        'video': 'https://www.youtube.com/embed/j5OWOyz5VLk?si=Zj7grpqVRZq-Fxco&autoplay=1&loop=1',
         'next': '3',
         'prev': '1'
     },
     '3': {
-        'name': 'reverse fold',
-        'diagram': '',
-        'video': '',
+        'name': 'pull',
+        'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orisymbol_pull.svg/1000px-Orisymbol_pull.svg.png',
+        'video': 'https://www.youtube.com/embed/ZtD1X2gZmSs?si=3zhMJR4yz9bYMLEz&autoplay=1&loop=1',
         'next': '4',
         'prev': '2'
-    }
+    },
+    '4': {
+        'name': 'open',
+        'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Orisymbol_open.svg/1000px-Orisymbol_open.svg.png',
+        'video': 'https://www.youtube.com/embed/pxjdk0Jbn1E?si=9OnCdo6-DpIBBhM8&autoplay=1&loop=1',
+        'next': '5',
+        'prev': '3'
+    },
+    
 }
 
 # data related to the quiz module

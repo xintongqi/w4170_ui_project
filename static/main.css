@@ -3,6 +3,38 @@
   color: blue;
 }
 
+/* Learn */
+#step {
+  padding: 20px;
+  margin: 10px;
+}
+
+#step h2 {
+  text-align: center;
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+  border: none;
+  width: 100%;
+  height: 315px;
+}
+
+#prevButton,
+#nextButton {
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Quiz */
 #quiz_back_next_but {
   position: fixed;

@@ -165,7 +165,7 @@ user_data = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', learn_data=learn_data)
 
 @app.route('/learn_step/<step_id>')
 def view_step(step_id):

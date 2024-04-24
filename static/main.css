@@ -1,3 +1,52 @@
+/* Global */
+html,
+body {
+  background-color: #fff2cc;
+  color: #666666;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.btn-primary {
+  background-color: #6ba94f;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #eeeeee;
+}
+
+.navbar {
+  background-color: #eeeeee;
+}
+
+#special-font {
+  font-family: "Caveat", cursive;
+}
+
+/* Index */
+.container .col-md-8 .text-center {
+  margin-bottom: 30px;
+}
+
+.video-container,
+.image-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Search */
 .highlight {
   color: blue;

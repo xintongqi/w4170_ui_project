@@ -5,12 +5,28 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'index.js') }}"></script>
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-8 offset-md-2">
-            <div class="text-center mt-5">
-                <h1>Welcome to the world of Origami!</h1>
-                <p class="lead">This module will teach you the basis of origami step by step.</p>
-                <button id="startButton" class="btn btn-primary">Start Learning Now!</button>
+            <div class="text-center">
+                <h1>Welcome to Origami World!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="video-container">
+                <iframe src="{{ learn_data['1']['video'] }}" allowfullscreen></iframe>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button id="videoButton" class="btn btn-primary mt-3">Play Video</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="image-container">
+                <img src="{{ learn_data['1']['diagram'] }}" alt="{{ learn_data['1']['name'] }} Diagram">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button id="imageButton" class="btn btn-primary mt-3">View Image</button>
             </div>
         </div>
     </div>

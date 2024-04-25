@@ -77,6 +77,8 @@ function showNextButton() {
 }
 $(document).ready(function(){
     $('#quiz_num').append(id+'.');
+    $('#quiz_A_but').append(content['A']);
+    $('#quiz_B_but').append(content['B']);
     $('#quiz_question').append(content['question']);
     if (id < 6){
         $('#basic_folds_bar').addClass('bold');

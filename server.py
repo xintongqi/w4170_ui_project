@@ -4,6 +4,32 @@ from flask import request, jsonify
 
 app = Flask(__name__)
 
+"""
+https://i.postimg.cc/qRR3NkMQ/UI-design-q1-2.png
+https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png
+https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png
+https://i.postimg.cc/ZRMy31Wm/UI-design-q3-4.png
+https://i.postimg.cc/kgQ8Z1pN/UI-design-q5.png
+https://i.postimg.cc/htYLVz66/UI-design-boat1.png
+https://i.postimg.cc/Hsp9mCbZ/UI-design-boat2.png
+https://i.postimg.cc/8zcdFBKL/UI-design-boat3.png
+https://i.postimg.cc/DfQPRz44/UI-design-boat4.png
+https://i.postimg.cc/xTtyTFR0/UI-design-boat5.png
+https://i.postimg.cc/gjKyhMbH/UI-design-boat6.png
+https://i.postimg.cc/SsCfSSZ5/UI-design-boat7.png
+https://i.postimg.cc/fysjkGpb/UI-design-boat8.png
+https://i.postimg.cc/zf9kYbkK/UI-design-boat9.png
+"""
+boat_links= [
+    "https://i.postimg.cc/htYLVz66/UI-design-boat1.png",
+    "https://i.postimg.cc/Hsp9mCbZ/UI-design-boat2.png",
+    "https://i.postimg.cc/8zcdFBKL/UI-design-boat3.png",
+    "https://i.postimg.cc/DfQPRz44/UI-design-boat4.png",
+    "https://i.postimg.cc/xTtyTFR0/UI-design-boat5.png",
+    "https://i.postimg.cc/gjKyhMbH/UI-design-boat6.png",
+    "https://i.postimg.cc/SsCfSSZ5/UI-design-boat7.png",
+    "https://i.postimg.cc/fysjkGpb/UI-design-boat8.png",
+    ]
 # data related to the learning module
 learn_data = {
     '1': {
@@ -41,104 +67,130 @@ learn_data = {
 quiz_data = {
     '1': {
         'question': 'What fold is this?',
-        'diagram': '',
+        'diagram': 'https://i.postimg.cc/qRR3NkMQ/UI-design-q1-2.png',
         'video': '',
+        'A': 'Mountain Fold',
+        'B':'Valley Fold',
         'answer': 'A',
         'next': '2',
         'prev': None
     },
     '2': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': 'https://i.postimg.cc/qRR3NkMQ/UI-design-q1-2.png',
         'video': '',
-        'answer': 'A',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
+        'answer': 'B',
         'next': '3',
         'prev': '1'
     },
     '3': {
         'question': 'What fold is this?',
-        'diagram': '',
+        'diagram': 'https://i.postimg.cc/ZRMy31Wm/UI-design-q3-4.png',
         'video': '',
-        'answer': 'A',
+        'A': 'Mountain Fold',
+        'B':'Valley Fold',
+        'answer': 'B',
         'next': '4',
         'prev': '2'
     },
     '4': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': 'https://i.postimg.cc/ZRMy31Wm/UI-design-q3-4.png',
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '5',
         'prev': '3'
     },
     '5': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': 'https://i.postimg.cc/kgQ8Z1pN/UI-design-q5.png',
         'video': '',
-        'answer': 'A',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram rotated" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice B">',
+        'answer': 'B',
         'next': '6',
         'prev': '4'
     },
     '6': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[0],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '7',
         'prev': '5'
     },
     '7': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[1],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '8',
         'prev': '6'
     },
     '8': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[2],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '9',
         'prev': '7'
     },
     '9': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[3],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '10',
         'prev': '8'
     },
     '10': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[4],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '11',
         'prev': '9'
     },
     '11': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[5],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '12',
         'prev': '10'
     },
     '12': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[6],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': '13',
         'prev': '11'
     },
     '13': {
         'question': 'What should it look like after the fold?',
-        'diagram': '',
+        'diagram': boat_links[7],
         'video': '',
+        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
+        'B':'<img class = "quiz-choice-diagram" src="https://i.postimg.cc/JhRJWNff/UI-design-q1-5-choice-B.png" alt="choice B">',
         'answer': 'A',
         'next': None,
         'prev': '12'

@@ -8,15 +8,15 @@
     let score = {{ quiz_score| tojson }};
 
 </script>
-
 <div id="quiz_result">
+    <div id="congrats">Congratulations!</div>
     <div id="quiz_score">Score: {{quiz_score}}/13</div>
     <div>
-        <button id="quiz_resultHome" class = "btn btn-secondary">Home</button>
+        <button id="quiz_resultHome" class = "btn btn-success">Home</button>
     </div>
     <div id="quiz_result_buttons">
-        <button id="quiz_resultLearn" class = "btn btn-secondary">Learn basics</button>
-        <button id="quiz_resultQuiz" class = "btn btn-secondary">Quiz Time</button>
+        <button id="quiz_resultLearn" class = "btn btn-secondary bold">Learn basics</button>
+        <button id="quiz_resultQuiz" class = "btn btn-secondary bold">Quiz Time</button>
     </div>
 </div>
 

@@ -1,4 +1,8 @@
 /* Global */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+}
 html,
 body {
   background-color: #fff2cc;
@@ -101,10 +105,15 @@ iframe {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  min-height: 100vh;
+  
+}
+#quiz_resultHome{
+  width: 246px;
 }
 #quiz_score {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  font-size: 30px;
 }
 #quiz_result_buttons {
   margin-top: 10px;
@@ -114,7 +123,6 @@ iframe {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  min-height: 100vh;
 }
 #basic_folds_bar {
   text-align: center;
@@ -142,9 +150,24 @@ iframe {
 #quiz_right_wrong {
   text-align: center;
 }
+#congrats{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+}
 .bold {
-  font-weight: bold;
+  color: gray;
 }
 .lighter {
-  font-weight: lighter;
+  color: lightgray;
+}
+.quiz-question-diagram{
+  height: 200px;
+}
+
+.quiz-choice-diagram{
+  height: 100px;
+}
+
+.rotated{
+  transform: rotate(180deg);
 }

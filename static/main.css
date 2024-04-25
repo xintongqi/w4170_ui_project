@@ -1,8 +1,9 @@
 /* Global */
 @font-face {
-  font-family: 'Pacifico';
-  src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  font-family: "Pacifico";
+  src: url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 }
+
 html,
 body {
   background-color: #fff2cc;
@@ -94,80 +95,98 @@ iframe {
   bottom: 10px;
   right: 10px;
 }
+
 #quiz_nextButton {
   display: none;
 }
+
 #quiz_backButton {
   display: none;
 }
+
 #quiz_result {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  
 }
-#quiz_resultHome{
+
+#quiz_resultHome {
   width: 246px;
 }
+
 #quiz_score {
   margin-bottom: 100px;
   margin-top: 100px;
   font-size: 30px;
 }
+
 #quiz_result_buttons {
   margin-top: 10px;
 }
+
 #quiz_section {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
+
 #basic_folds_bar {
   text-align: center;
   border-right: solid 0.5px lightgray;
 }
+
 #boat_bar {
   text-align: center;
   border-left: solid 0.5px lightgray;
 }
+
 #quiz_num {
   text-align: right;
 }
+
 #quiz_img {
   text-align: center;
 }
+
 #quiz_question {
   text-align: center;
 }
+
 #quiz_A {
   text-align: center;
 }
+
 #quiz_B {
   text-align: center;
 }
+
 #quiz_right_wrong {
   text-align: center;
 }
-#congrats{
-  font-family: 'Pacifico', cursive;
+
+#congrats {
+  font-family: "Pacifico", cursive;
   font-size: 40px;
 }
+
 .bold {
   color: gray;
 }
+
 .lighter {
   color: lightgray;
 }
-.quiz-question-diagram{
+
+.quiz-question-diagram {
   height: 200px;
 }
 
-.quiz-choice-diagram{
+.quiz-choice-diagram {
   height: 100px;
 }
 
-.rotated{
+.rotated {
   transform: rotate(180deg);
 }

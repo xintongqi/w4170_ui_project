@@ -8,6 +8,17 @@ function display_step(step) {
     '" alt="' +
     step.name +
     '" class="img-fluid"/>';
+  stepHtml += "<ul>";
+  step.notion.forEach(function (item, index) {
+    stepHtml += "<li>";
+    stepHtml +=
+      '<input type="checkbox" id="checkbox_' +
+      index +
+      '" class="notion-checkbox">';
+    stepHtml += '<label for="checkbox_' + index + '">' + item + "</label>";
+    stepHtml += "</li>";
+  });
+  stepHtml += "</ul>";
   stepHtml += "</div>";
 
   stepHtml += '<div class="col-md-8">';
@@ -25,9 +36,25 @@ function display_step(step) {
 
   stepHtml +=
     "<button id='prevButton' class='btn btn-primary'>Previous</button>";
-  stepHtml += "<button id='nextButton' class='btn btn-primary'>Next</button>";
+  stepHtml +=
+    "<button id='nextButton' class='btn btn-primary' disabled>Next</button>";
 
   $("#step").html(stepHtml);
+
+  var allChecked = false;
+  $(".notion-checkbox").change(function () {
+    allChecked = true;
+    $(".notion-checkbox").each(function () {
+      if (!$(this).is(":checked")) {
+        allChecked = false;
+      }
+    });
+    if (allChecked) {
+      $("#nextButton").prop("disabled", false);
+    } else {
+      $("#nextButton").prop("disabled", true);
+    }
+  });
 
   if (step.prev === null) {
     $("#prevButton").hide();

@@ -237,14 +237,12 @@ def take_quiz(prob_id):
             user_data[key] = ''
     prob = quiz_data.get(prob_id)
     if prob:
-        # todo: render the quiz template with proper url
         return render_template('quiz.html', step=prob_id, prob = prob)
     else:
         return "Oops! We don't have a quiz problem with this index!!"
 
 @app.route('/quiz/result')
 def quiz_result():
-    # todo: render the quiz template with proper url
     return render_template('quiz_result.html', quiz_score = current_quiz_score)
 
 @app.route('/search', methods=['POST'])
@@ -270,19 +268,6 @@ def add_choice():
     choice = json_data["choice"]
     user_data[id] = choice
     return jsonify(user_data = user_data)
-# # todo: record user choices; may need to change name of the route
-# @app.route('/add', methods=['GET', 'POST'])
-# def add_user_data():
-#     if request.method == 'POST':
-#         # todo: fill this up
-#         added_user_response = {
-            
-#         }
-
-#         user_data[str(len(app_data) + 1)] = add_user_data
-#         # todo: change this
-#         return 200
-#     return render_template('add.html', recipes = app_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

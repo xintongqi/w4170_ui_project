@@ -89,6 +89,14 @@ iframe {
   justify-content: space-between;
 }
 
+.notion-list {
+  list-style: none;
+}
+
+.notion-list li {
+  margin-bottom: 10px;
+}
+
 /* Quiz */
 #quiz_back_next_but {
   position: fixed;

@@ -8,7 +8,7 @@ function display_step(step) {
     '" alt="' +
     step.name +
     '" class="img-fluid"/>';
-  stepHtml += "<ul>";
+  stepHtml += "<ul class='notion-list'>";
   step.notion.forEach(function (item, index) {
     stepHtml += "<li>";
     stepHtml +=

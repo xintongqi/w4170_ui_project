@@ -1,6 +1,7 @@
 function display_step(step, totalSteps) {
   var stepHtml = "";
   var stepNumber = parseInt(step.id);
+  var allChecked = false;
 
   // header
   stepHtml += '<div class="row text-center">';
@@ -64,11 +65,10 @@ function display_step(step, totalSteps) {
 
   // buttons
   stepHtml += '<div class="row justify-content-end">';
-  stepHtml += '<div id="buttonWrapper" class="col-md-12 button-container">';
+  stepHtml += '<div class="col-md-12 button-container">';
   stepHtml +=
     "<button id='prevButton' class='btn btn-primary'>Previous</button>";
-  stepHtml +=
-    "<button id='nextButton' class='btn btn-primary' disabled>Next</button>";
+  stepHtml += "<button id='nextButton' class='btn btn-primary'>Next</button>";
   stepHtml += "</div>";
   stepHtml += "</div>";
 
@@ -81,7 +81,6 @@ function display_step(step, totalSteps) {
 
   $("#step").html(stepHtml);
 
-  var allChecked = false;
   $(".notion-checkbox").change(function () {
     allChecked = true;
     $(".notion-checkbox").each(function () {
@@ -89,11 +88,6 @@ function display_step(step, totalSteps) {
         allChecked = false;
       }
     });
-    if (allChecked) {
-      $("#nextButton").prop("disabled", false);
-    } else {
-      $("#nextButton").prop("disabled", true);
-    }
   });
 
   if (step.prev === null) {
@@ -115,17 +109,16 @@ function display_step(step, totalSteps) {
   });
 
   $("#nextButton").click(function () {
-    if (s !== null) {
-      location.href = s.next;
-    }
-  });
-
-  $("#buttonWrapper").click(function () {
-    console.log("clicked");
-    if ($("#nextButton").prop("disabled")) {
+    console.log(allChecked);
+    if (!allChecked) {
       $("#errorMessage").text("Please check all checkboxes before proceeding.");
-    } else {
+    } else if (s !== null) {
       $("#errorMessage").text("");
+      if (s !== null && s.next !== "transition") {
+        location.href = s.next;
+      } else if (s !== null && s.next === "transition") {
+        location.href = "/transition";
+      }
     }
   });
 }

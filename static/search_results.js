@@ -16,7 +16,7 @@ function displaySearchResults(searchResults, searchText, noResults) {
         let step = searchResults[stepId];
         let highlightedTitle = highlightMatchingText(step.name, searchText);
         html +=
-          "<li><a href='/view/" +
+          "<li><a href='/learn_step/" +
           step.id +
           "'>" +
           highlightedTitle +
@@ -43,5 +43,4 @@ function highlightMatchingText(text, searchText) {
 
 $(document).ready(function () {
   displaySearchResults(sr, st, nr);
-  console.log(sr, st, nr);
 });

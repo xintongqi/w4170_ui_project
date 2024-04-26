@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'transition.js') }}"></script>
+
+<div id="transition">
+    <div id="transition_text" class="text-center">
+        <h1>Ready for the Quiz?</h1>
+    </div>
+    <div id="transition_buttons" class="text-center">
+        <button id="transitionQuiz" class="btn btn-primary bold bigger-button">Let's Go!!</button>
+        <br>
+        <button id="transitionLearn" class="btn btn-secondary bold">Learn Stuff Again</button>
+    </div>
+</div>
+
+{% endblock %}

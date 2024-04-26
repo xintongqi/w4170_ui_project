@@ -36,7 +36,7 @@ learn_data = {
         'id': '1',
         'name': 'Mountain Fold',
         'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Orisymbol_mountain_fold.svg/1000px-Orisymbol_mountain_fold.svg.png',
-        'video': 'https://www.youtube.com/embed/2jmhd7BPHx0?si=mkOOLQx60T1608_j&autoplay=1&loop=1',
+        'video': 'https://www.youtube.com/embed/2jmhd7BPHx0?si=mkOOLQx60T1608_j&autoplay=1&loop=1&playlist=2jmhd7BPHx0',
         'next': '2',
         'prev': None,
         'description': 'Fold the paper away from you and create a mountain ridge.',
@@ -46,7 +46,7 @@ learn_data = {
         'id': '2',
         'name': 'Valley Fold',
         'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Origami_symbol_valley_fold.svg/1000px-Origami_symbol_valley_fold.svg.png',
-        'video': 'https://www.youtube.com/embed/j5OWOyz5VLk?si=Zj7grpqVRZq-Fxco&autoplay=1&loop=1',
+        'video': 'https://www.youtube.com/embed/j5OWOyz5VLk?si=Zj7grpqVRZq-Fxco&autoplay=1&loop=1&playlist=j5OWOyz5VLk',
         'next': '3',
         'prev': '1',
         'description': 'Fold the paper towards you and create a valley.' ,
@@ -56,7 +56,7 @@ learn_data = {
         'id': '3',
         'name': 'Pull',
         'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Orisymbol_pull.svg/1000px-Orisymbol_pull.svg.png',
-        'video': 'https://www.youtube.com/embed/ZtD1X2gZmSs?si=3zhMJR4yz9bYMLEz&autoplay=1&loop=1',
+        'video': 'https://www.youtube.com/embed/ZtD1X2gZmSs?si=3zhMJR4yz9bYMLEz&autoplay=1&loop=1&playlist=ZtD1X2gZmSs',
         'next': '4',
         'prev': '2',
         'description': 'Pull the paper in the direction of the arrow.',
@@ -66,8 +66,8 @@ learn_data = {
         'id': '4',
         'name': 'Open',
         'diagram': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Orisymbol_open.svg/1000px-Orisymbol_open.svg.png',
-        'video': 'https://www.youtube.com/embed/pxjdk0Jbn1E?si=9OnCdo6-DpIBBhM8&autoplay=1&loop=1',
-        'next': None,
+        'video': 'https://www.youtube.com/embed/pxjdk0Jbn1E?si=9OnCdo6-DpIBBhM8&autoplay=1&loop=1&playlist=pxjdk0Jbn1E',
+        'next': 'transition',
         'prev': '3',
         'description': 'Open the paper in the direction of the arrow.',
         'notion': ['a fat, emtpy arrow', 'a curved tail', 'no dots or slashes']
@@ -238,6 +238,10 @@ def view_step(step_id):
         return render_template('learn_step.html', step=step, steps = learn_data)
     else:
         return "Oops! We don't have a step with this index!!"
+
+@app.route('/transition')
+def transition():
+    return render_template('transition.html')
     
 @app.route('/quiz/<prob_id>')
 def take_quiz(prob_id):

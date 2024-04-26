@@ -32,16 +32,16 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/" id="special-font">Origami World</a>
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item {% if request.path.startswith('/learn_step/') %}active{% endif %}">
                     <a class="nav-link" href="/learn_step/1">Learn Basics</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if request.path.startswith('/quiz/') %}active{% endif %}">
                     <a class="nav-link" href="/quiz/1">Quiz Time</a>
                 </li>
             </ul>
             <form id="search-form" class="d-flex" action="/search" method="POST">
-                <input id="search-input" class="form-control me-2" type="search" placeholder="step" aria-label="Search"
-                    name="search">
+                <input id="search-input" class="form-control me-2" type="search" placeholder="Step Name"
+                    aria-label="Search" name="search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

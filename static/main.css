@@ -63,8 +63,8 @@ body {
   margin: 10px;
 }
 
-#step h2 {
-  text-align: center;
+#step .row {
+  margin-bottom: 20px;
 }
 
 img.img-fluid {
@@ -79,6 +79,12 @@ iframe {
   height: 315px;
 }
 
+.step-image,
+.step-video {
+  height: 300px;
+  overflow: hidden;
+}
+
 #prevButton,
 #nextButton {
   margin: 10px;
@@ -91,9 +97,12 @@ iframe {
 
 .notion-list {
   list-style: none;
+  padding-left: 50px;
 }
 
 .notion-list li {
+  margin-left: none;
+  padding-left: none;
   margin-bottom: 10px;
 }
 

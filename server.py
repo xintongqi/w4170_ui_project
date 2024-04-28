@@ -60,7 +60,7 @@ learn_data = {
         'next': '3',
         'prev': '1',
         'description': 'Fold the paper towards you and create a valley.' ,
-        'notion': [ 'solid arrow', 'only shashes, not dots']
+        'notion': [ 'solid arrow', 'only slashes, not dots']
     },
     '3': {
         'id': '3',

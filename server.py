@@ -50,7 +50,7 @@ learn_data = {
         'next': '2',
         'prev': None,
         'description': 'Fold the paper away from you and create a mountain ridge.',
-        'notion': [ 'empty arrow', 'two dots and a slash']
+        'notion': [ 'empty arrow', 'two dots and a dash']
     },
     '2': {
         'id': '2',
@@ -60,7 +60,7 @@ learn_data = {
         'next': '3',
         'prev': '1',
         'description': 'Fold the paper towards you and create a valley.' ,
-        'notion': [ 'solid arrow', 'only dashes, not dots']
+        'notion': [ 'solid arrow', 'only dashes, no dots']
     },
     '3': {
         'id': '3',
@@ -70,7 +70,7 @@ learn_data = {
         'next': '4',
         'prev': '2',
         'description': 'Pull the paper in the direction of the arrow.',
-        'notion': ['a fat, empty arrow', 'no arrow tail', 'no dots or slashes']
+        'notion': ['a fat, empty arrow', 'no arrow tail', 'no dots or dashes']
     },
     '4': {
         'id': '4',
@@ -80,7 +80,7 @@ learn_data = {
         'next': 'transition',
         'prev': '3',
         'description': 'Open the paper in the direction of the arrow.',
-        'notion': ['a fat, emtpy arrow', 'a curved tail', 'no dots or slashes']
+        'notion': ['a fat, emtpy arrow', 'a curved tail', 'no dots or dashes']
     },
     
 }

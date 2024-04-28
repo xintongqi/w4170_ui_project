@@ -129,85 +129,75 @@ quiz_data = {
     },
     '5': {
         'question': 'What should it look like after the fold?',
-        'diagram': 'https://i.postimg.cc/kgQ8Z1pN/UI-design-q5.png',
+        'diagram': boat_links[0],
         'video': '',
-        'A': '<img class = "quiz-choice-diagram" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice A">',
-        'B':'<img class = "quiz-choice-diagram rotated" src="https://i.postimg.cc/TPQb2yGp/UI-design-q1-5-choice-A.png" alt="choice B">',
+        'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[0]['N']+'frameborder="0"></iframe>',
+        'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[0]['Y']+'frameborder="0"></iframe>',
         'answer': 'B',
         'next': '6',
         'prev': '4'
     },
     '6': {
         'question': 'What should it look like after the fold?',
-        'diagram': boat_links[0],
+        'diagram': boat_links[1],
         'video': '',
-        'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[0]['N']+'frameborder="0"></iframe>',
-        'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[0]['Y']+'frameborder="0"></iframe>',
+        'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[1]['N']+'frameborder="0"></iframe>',
+        'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[1]['Y']+'frameborder="0"></iframe>',
         'answer': 'B',
         'next': '7',
         'prev': '5'
     },
     '7': {
         'question': 'What should it look like after the fold?',
-        'diagram': boat_links[1],
-        'video': '',
-        'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[1]['N']+'frameborder="0"></iframe>',
-        'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[1]['Y']+'frameborder="0"></iframe>',
-        'answer': 'B',
-        'next': '8',
-        'prev': '6'
-    },
-    '8': {
-        'question': 'What should it look like after the fold?',
         'diagram': boat_links[2],
         'video': '',
         'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[2]['Y']+'frameborder="0"></iframe>',
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[2]['N']+'frameborder="0"></iframe>',
         'answer': 'A',
-        'next': '9',
-        'prev': '7'
+        'next': '8',
+        'prev': '6'
     },
-    '9': {
+    '8': {
         'question': 'What should it look like after the fold?',
         'diagram': boat_links[3],
         'video': '',
         'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[3]['N']+'frameborder="0"></iframe>',
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[3]['Y']+'frameborder="0"></iframe>',
         'answer': 'B',
-        'next': '10',
-        'prev': '8'
+        'next': '9',
+        'prev': '7'
     },
-    '10': {
+    '9': {
         'question': 'What should it look like after the fold?',
         'diagram': boat_links[4],
         'video': '',
         'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[4]['Y']+'frameborder="0"></iframe>',
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[4]['N']+'frameborder="0"></iframe>',
         'answer': 'A',
-        'next': '11',
-        'prev': '9'
+        'next': '10',
+        'prev': '8'
     },
-    '11': {
+    '10': {
         'question': 'What should it look like after the fold?',
         'diagram': boat_links[5],
         'video': '',
         'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[5]['Y']+'frameborder="0"></iframe>',
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[5]['N']+'frameborder="0"></iframe>',
         'answer': 'A',
-        'next': '12',
-        'prev': '10'
+        'next': '11',
+        'prev': '9'
     },
-    '12': {
+    '11': {
         'question': 'What should it look like after the fold?',
         'diagram': boat_links[6],
         'video': '',
         'A': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[6]['Y']+'frameborder="0"></iframe>',
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[6]['N']+'frameborder="0"></iframe>',
         'answer': 'A',
-        'next': '13',
-        'prev': '11'
+        'next': '12',
+        'prev': '10'
     },
-    '13': {
+    '12': {
         'question': 'What should it look like after the fold?',
         'diagram': boat_links[7],
         'video': '',
@@ -215,7 +205,7 @@ quiz_data = {
         'B': '<iframe class="quiz-choice-diagram" src='+boat_choice_links[7]['Y']+'frameborder="0"></iframe>',
         'answer': 'B',
         'next': None,
-        'prev': '12'
+        'prev': '11'
     }
 }
 current_quiz_score = 0

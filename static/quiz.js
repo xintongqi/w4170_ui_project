@@ -80,7 +80,7 @@ $(document).ready(function(){
     $('#quiz_A_but').append(content['A']);
     $('#quiz_B_but').append(content['B']);
     $('#quiz_question').append(content['question']);
-    if (id < 6){
+    if (id < 5){
         $('#basic_folds_bar').addClass('bold');
         $('#boat_bar').addClass('lighter');
     } else {

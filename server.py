@@ -242,6 +242,10 @@ def view_step(step_id):
 @app.route('/transition')
 def transition():
     return render_template('transition.html')
+
+@app.route('/illustrate')
+def illustrate():
+    return render_template('illustrate.html')
     
 @app.route('/quiz/<prob_id>')
 def take_quiz(prob_id):

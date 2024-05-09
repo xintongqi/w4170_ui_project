@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'illustrate.js') }}"></script>
+
+<div id="illustrate" class="container text-center">
+    <div class="row">
+        <div class="col">
+            <h1>Commonly Used Symbols in Origami</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="https://i.postimg.cc/8Csb58jR/Screenshot-2024-05-08-at-9-54-27-PM-removebg-preview.png"
+                alt="symbols" class="img-fluid mx-auto d-block">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button id="nextButton" class="btn btn-primary">Next</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

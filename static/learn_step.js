@@ -42,7 +42,8 @@ function display_step(step, totalSteps) {
   // description
   stepHtml += '<div class="row">';
   stepHtml += '<div class="col-md-12 text-center">';
-  stepHtml += "<p>" + step.description + "</p>";
+  stepHtml +=
+    "<p>" + step.description + " In the diagram, characterized by:" + "</p>";
   stepHtml += "</div>";
   stepHtml += "</div>";
 
